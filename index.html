@@ -1,0 +1,267 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="theme-color" content="#f4c928"><title>REAL MESSAGE — Connect • Share • Grow</title>
+<style>
+:root{--gold:#f4c928;--gold2:#ffdf55;--ink:#171717;--muted:#777;--paper:#fffdf5;--line:#eee7cf;--shadow:0 8px 28px #6d570d14}
+*{box-sizing:border-box}body{margin:0;background:radial-gradient(circle at 15% 0%,#fff1a8 0,transparent 32%),linear-gradient(135deg,#fffdf5,#fff9df 55%,#fff);color:var(--ink);font:15px/1.45 Inter,system-ui,-apple-system,Segoe UI,Arial,sans-serif}
+button,input,textarea,select{font:inherit}button{cursor:pointer;border:0}a{color:inherit}.hidden{display:none!important}
+.topbar{height:68px;position:sticky;top:0;z-index:10;background:#fffdf2ed;backdrop-filter:blur(14px);border-bottom:1px solid var(--line);display:flex;align-items:center;justify-content:space-between;padding:0 max(18px,calc((100% - 1200px)/2));gap:14px}
+.brand{display:flex;align-items:center;gap:10px;font-weight:950;letter-spacing:-.7px;font-size:20px}.brandmark{width:40px;height:40px;border-radius:13px;background:linear-gradient(145deg,#ffe66b,#e9ae00);display:grid;place-items:center;color:#161616;font-weight:1000;font-size:24px;box-shadow:inset 0 0 0 2px #fff8}
+.top-actions{display:flex;align-items:center;gap:9px}.iconbtn{width:40px;height:40px;border-radius:50%;background:#fff;border:1px solid var(--line);font-size:18px}.wrap{max-width:1200px;margin:22px auto;padding:0 16px 100px;display:grid;grid-template-columns:220px minmax(0,650px) 260px;gap:20px}
+.panel,.card{background:#fff;border:1px solid var(--line);border-radius:19px;box-shadow:var(--shadow)}.sidebar{height:max-content;position:sticky;top:86px;padding:12px}.navitem{width:100%;display:flex;align-items:center;gap:12px;text-align:left;background:transparent;padding:12px;border-radius:12px;font-weight:700;color:#4b4637;margin:2px 0}.navitem .ico{width:25px;text-align:center;font-size:19px}.navitem.active,.navitem:hover{background:linear-gradient(90deg,#fff0a0,#fff9dc);color:#171717}.side-note{padding:13px;margin-top:10px;border-radius:14px;background:linear-gradient(135deg,#fff2a9,#fffaf0);font-size:12px;color:#6a5b25}
+.content{min-width:0}.pagehead{display:flex;align-items:center;justify-content:space-between;margin:2px 0 14px}.pagehead h1{font-size:25px;margin:0;letter-spacing:-.8px}.eyebrow{font-size:11px;color:#9b7900;font-weight:900;letter-spacing:1.5px;text-transform:uppercase}
+.card{padding:16px;margin-bottom:14px}.stories{display:flex;gap:13px;overflow:auto;padding:14px}.story{flex:0 0 68px;text-align:center;font-size:11px;font-weight:700;white-space:nowrap}.story-ring{width:62px;height:62px;border-radius:50%;padding:3px;background:linear-gradient(135deg,#ffcf00,#ff7d31,#9b5cff);margin:0 auto 5px}.story-ring img{width:100%;height:100%;border-radius:50%;object-fit:cover;border:3px solid white}.story.add .story-ring{background:#fff3b0;border:2px dashed #d2a800;padding:0;display:grid;place-items:center;font-size:25px;color:#8b6900}
+.composer{display:flex;gap:11px;align-items:center}.avatar{width:43px;height:43px;border-radius:50%;object-fit:cover;background:#ffe58a;flex:none}.fakeinput{flex:1;text-align:left;padding:12px 15px;border-radius:30px;background:#faf8f0;border:1px solid #eee7d2;color:#8b877b}.primary{background:linear-gradient(135deg,#ffe45c,#efbd00);color:#171717;border-radius:12px;padding:11px 16px;font-weight:850;box-shadow:0 5px 14px #e9bd2933}.secondary{background:#fff8d9;border:1px solid #f0dda0;border-radius:11px;padding:9px 13px;font-weight:750}.posthead{display:flex;align-items:center;gap:10px}.postmeta{flex:1}.postmeta b{display:block}.muted{color:var(--muted);font-size:12px}.more{background:transparent;font-size:21px}.posttext{margin:13px 0;white-space:pre-wrap}.postimg{width:100%;max-height:430px;object-fit:cover;border-radius:13px;background:#fff4c5}.postactions{display:flex;gap:6px;border-top:1px solid #f0eee6;padding-top:10px;margin-top:10px}.action{flex:1;background:transparent;padding:8px 4px;border-radius:9px;font-weight:700;color:#6c685c}.action:hover,.action.liked{background:#fff4bf;color:#9a7100}.commentrow{display:flex;gap:8px;margin-top:10px}.commentrow input{min-width:0;flex:1;border:1px solid var(--line);border-radius:20px;padding:9px 12px}.rightcol .card{padding:15px}.profilemini{display:flex;gap:10px;align-items:center}.statgrid{display:grid;grid-template-columns:repeat(3,1fr);text-align:center;margin-top:14px}.statgrid b{display:block;font-size:18px}.quickrow{display:flex;justify-content:space-between;padding:10px 0;border-bottom:1px solid #f2eddf;font-size:13px}.quickrow:last-child{border:0}
+input,textarea,select{width:100%;padding:12px;border:1px solid #e8e1cc;border-radius:11px;background:#fffdf8;outline:none}input:focus,textarea:focus{border-color:#d7a900;box-shadow:0 0 0 3px #f9df7540}textarea{min-height:95px;resize:vertical}.formgrid{display:grid;gap:10px}.modalback{position:fixed;inset:0;background:#15120bc0;z-index:30;display:grid;place-items:center;padding:16px}.modal{width:min(520px,100%);max-height:90vh;overflow:auto;background:#fffdf5;border-radius:20px;padding:22px;box-shadow:0 25px 90px #0005}.modal h2{margin:0 0 14px}.modalfoot{display:flex;gap:9px;justify-content:flex-end;margin-top:14px}.auth{min-height:100vh;display:grid;place-items:center;padding:20px;background:radial-gradient(circle at 20% 10%,#ffe46c,transparent 35%),linear-gradient(135deg,#171717,#39300e)}.authbox{width:min(430px,100%);background:#fffdf5;border-radius:25px;padding:28px;box-shadow:0 25px 80px #0006}.authbrand{text-align:center;margin-bottom:22px}.authbrand .brandmark{margin:auto;width:62px;height:62px;font-size:34px}.authbrand h1{margin:10px 0 0;font-size:27px}.authbrand p{margin:3px;color:#777}.tabs{display:flex;background:#f5f0df;border-radius:12px;padding:4px;margin:18px 0}.tabs button{flex:1;padding:10px;background:transparent;border-radius:9px;font-weight:800}.tabs button.active{background:#ffdc45}.hint{font-size:12px;color:#777;margin-top:12px}.empty{text-align:center;padding:35px 15px;color:#777}.empty strong{display:block;color:#333;font-size:17px;margin-bottom:4px}.userrow{display:flex;align-items:center;gap:11px;padding:11px 0;border-bottom:1px solid #f0ead9}.userrow:last-child{border:0}.userrow .grow{flex:1;min-width:0}.pill{font-size:10px;background:#fff1ac;padding:4px 8px;border-radius:20px;font-weight:800}.groupbanner{background:linear-gradient(120deg,#211d10,#735b0a);color:white;border-radius:15px;padding:22px;margin-bottom:13px}.groupbanner h2{margin:0 0 5px}.mobilebar{display:none}
+@media(max-width:980px){.wrap{grid-template-columns:190px minmax(0,1fr)}.rightcol{display:none}}
+@media(max-width:650px){.topbar{height:60px;padding:0 13px}.brand{font-size:17px}.brandmark{width:35px;height:35px}.wrap{display:block;margin:13px auto;padding:0 10px 95px}.sidebar{display:none}.rightcol{display:none}.pagehead h1{font-size:22px}.card{border-radius:16px;padding:13px}.mobilebar{display:flex;position:fixed;bottom:0;left:0;right:0;z-index:20;background:#fffdf4f2;backdrop-filter:blur(14px);border-top:1px solid var(--line);justify-content:space-around;padding:7px 2px calc(7px + env(safe-area-inset-bottom))}.mobilebar button{background:transparent;display:flex;flex-direction:column;align-items:center;gap:2px;font-size:10px;color:#5f594a;min-width:0;font-weight:700}.mobilebar button span:first-child{font-size:19px}.mobilebar button.active{color:#9b7400}.top-actions .hide-mobile{display:none}}
+</style>
+</head>
+<body>
+<div id="auth" class="auth">
+ <div class="authbox">
+  <div class="authbrand"><div class="brandmark">R</div><h1>REAL <span style="color:#d6a600">MESSAGE</span></h1><p>Connect • Share • Grow Together</p></div>
+  <div class="tabs"><button id="loginTab" class="active" onclick="setAuthMode('login')">Log in</button><button id="signupTab" onclick="setAuthMode('signup')">Create account</button></div>
+  <form id="authForm" class="formgrid">
+   <div id="nameField" class="hidden"><label class="muted">Your name</label><input id="authName" placeholder="Full name"></div>
+   <div><label class="muted">Username</label><input id="authUsername" placeholder="e.g. saiko_boy" autocomplete="username" required></div>
+   <div><label class="muted">Password</label><input id="authPassword" type="password" placeholder="At least 6 characters" autocomplete="current-password" required></div>
+   <button class="primary" type="submit" id="authSubmit">Log in</button>
+  </form>
+  <p id="authError" style="color:#b3261e;font-size:13px"></p><p class="hint">Firebase sign-in is enabled. Posts, stories and other social content remain browser-local in this starter build.</p>
+ </div>
+</div>
+<div id="app" class="hidden">
+<header class="topbar">
+ <div class="brand"><div class="brandmark">R</div><span>REAL <span style="color:#d6a600">MESSAGE</span></span></div>
+ <div class="top-actions"><button class="iconbtn" title="Search" onclick="navigate('people')">⌕</button><button class="iconbtn" title="Notifications" onclick="navigate('alerts')">♧</button><button class="iconbtn hide-mobile" title="Create post" onclick="openPost()">＋</button><img id="topAvatar" class="avatar" style="width:38px;height:38px;cursor:pointer" onclick="navigate('profile')"></div>
+</header>
+<div class="wrap">
+ <aside class="sidebar panel" id="sideNav"></aside>
+ <main class="content" id="main"></main>
+ <aside class="rightcol">
+  <div class="card"><div class="eyebrow">Your network</div><div class="profilemini" style="margin-top:10px"><img id="rightAvatar" class="avatar"><div><b id="rightName">Welcome</b><div class="muted" id="rightHandle"></div></div></div><div class="statgrid"><div><b id="statPosts">0</b><span class="muted">Posts</span></div><div><b id="statFriends">0</b><span class="muted">Friends</span></div><div><b id="statGroups">0</b><span class="muted">Groups</span></div></div></div>
+  <div class="card"><div class="eyebrow">Explore</div><div class="quickrow"><span>👥 Find people</span><b onclick="navigate('people')">→</b></div><div class="quickrow"><span>🎬 Watch Reels</span><b onclick="navigate('reels')">→</b></div><div class="quickrow"><span>◎ Discover groups</span><b onclick="navigate('groups')">→</b></div></div>
+  <div class="side-note">✨ A brighter place to connect, share ideas and grow together.</div>
+ </aside>
+</div>
+<nav class="mobilebar" id="mobileNav"></nav>
+</div>
+<div id="modalRoot"></div>
+<script>
+const $=id=>document.getElementById(id);
+const KEY='real_message_demo_v1';
+const icons={home:'⌂',reels:'▣',people:'♧',market:'▤',alerts:'♢',profile:'◉',groups:'◎',channels:'▤'};
+const labels={home:'Home',reels:'Reels',people:'People',market:'Market',alerts:'Alerts',profile:'Profile',groups:'Groups',channels:'Channels'};
+let db=loadDB(), current=null, page='home', authMode='login'; window.authMode=authMode;
+function loadDB(){try{return JSON.parse(localStorage.getItem(KEY))||{users:[],posts:[],stories:[],groups:[],products:[],alerts:[]}}catch(e){return {users:[],posts:[],stories:[],groups:[],products:[],alerts:[]}}}
+function save(){localStorage.setItem(KEY,JSON.stringify(db))}
+function uid(){return Math.random().toString(36).slice(2,10)}
+function safe(s=''){return String(s).replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]))}
+function avatar(u){return u?.avatar||'https://ui-avatars.com/api/?name='+encodeURIComponent(u?.name||'RM')+'&background=ffe27a&color=302500&bold=true'}
+function userByName(n){return db.users.find(u=>u.username.toLowerCase()===n.toLowerCase())}
+function setAuthMode(m){authMode=m;window.authMode=m;$('loginTab').classList.toggle('active',m==='login');$('signupTab').classList.toggle('active',m==='signup');$('nameField').classList.toggle('hidden',m==='login');$('authSubmit').textContent=m==='login'?'Log in':'Create account';$('authError').textContent=''}
+// Firebase Authentication is initialized in the module script below.
+
+function err(t){$('authError').textContent=t}
+function me(){return db.users.find(u=>u.id===current)}
+function showApp(){$('auth').classList.add('hidden');$('app').classList.remove('hidden');render()}
+window.startRealMessageSession = function(userId, profile){ current=userId; if(profile){ const i=db.users.findIndex(x=>x.id===userId); if(i>=0) db.users[i]={...db.users[i],...profile}; else db.users.push({...profile,id:userId,friends:[]}); save(); } showApp(); };
+function logout(){if(window.realMessageFirebaseSignOut){window.realMessageFirebaseSignOut();return}current=null;$('app').classList.add('hidden');$('auth').classList.remove('hidden');$('authPassword').value=''}
+function navItems(){return ['home','reels','people','market','alerts','profile','groups','channels']}
+function renderNav(){let html=navItems().map(k=>`<button class="navitem ${page===k?'active':''}" onclick="navigate('${k}')"><span class="ico">${icons[k]}</span>${labels[k]}</button>`).join('');$('sideNav').innerHTML=html+`<button class="navitem" onclick="openPost()"><span class="ico">＋</span>Create post</button><button class="navitem" onclick="logout()"><span class="ico">↪</span>Log out</button>`;$('mobileNav').innerHTML=['home','reels','people','market','alerts','profile'].map(k=>`<button class="${page===k?'active':''}" onclick="navigate('${k}')"><span>${icons[k]}</span>${labels[k]}</button>`).join('')}
+function navigate(p){page=p;render()}
+function render(){let u=me();if(!u)return;renderNav();$('topAvatar').src=avatar(u);$('rightAvatar').src=avatar(u);$('rightName').textContent=u.name;$('rightHandle').textContent='@'+u.username;$('statPosts').textContent=db.posts.filter(p=>p.userId===u.id).length;$('statFriends').textContent=u.friends.length;$('statGroups').textContent=db.groups.filter(g=>g.members.includes(u.id)).length;let f={home:homePage,reels:reelsPage,people:peoplePage,market:marketPage,alerts:alertsPage,profile:profilePage,groups:groupsPage,channels:channelsPage}[page]||homePage;$('main').innerHTML=f()}
+function pageTitle(title,sub=''){return `<div class="pagehead"><div><div class="eyebrow">REAL MESSAGE NETWORK</div><h1>${title}</h1>${sub?`<div class="muted">${sub}</div>`:''}</div><button class="primary" onclick="openPost()">＋ Post</button></div>`}
+function storyStrip(){let list=db.stories.filter(s=>Date.now()-s.created<86400000);return `<div class="card stories"><div class="story add" onclick="openStory()"><div class="story-ring">＋</div>Your story</div>${list.map(s=>{let u=db.users.find(x=>x.id===s.userId);return `<div class="story" onclick="viewStory('${s.id}')"><div class="story-ring"><img src="${avatar(u)}"></div>${safe(u?.name||'User').split(' ')[0]}</div>`}).join('')}</div>`}
+function homePage(){return pageTitle('Your feed','Good things happen when we connect.')+storyStrip()+`<div class="card"><div class="composer"><img class="avatar" src="${avatar(me())}"><button class="fakeinput" onclick="openPost()">What's on your mind, ${safe(me().name.split(' ')[0])}?</button></div><div style="display:flex;gap:8px;margin-top:13px"><button class="secondary" onclick="openPost()">▧ Photo / post</button><button class="secondary" onclick="openStory()">◉ Story</button></div></div>`+postList(db.posts)}
+function postList(posts){if(!posts.length)return `<div class="card empty"><strong>Your feed is just getting started</strong>Share a thought, photo or update with your network.</div>`;return posts.slice().sort((a,b)=>b.created-a.created).map(p=>{let u=db.users.find(x=>x.id===p.userId)||{name:'Deleted user',username:'unknown'};let liked=p.likes.includes(current);return `<article class="card"><div class="posthead"><img class="avatar" src="${avatar(u)}"><div class="postmeta"><b>${safe(u.name)}</b><div class="muted">@${safe(u.username)} · ${new Date(p.created).toLocaleString()}</div></div>${p.userId===current?`<button class="more" onclick="deletePost('${p.id}')">⋯</button>`:''}</div><div class="posttext">${safe(p.text)}</div>${p.image?`<img class="postimg" src="${safe(p.image)}" alt="Post image">`:''}<div class="muted">${p.likes.length} likes · ${p.comments.length} comments</div><div class="postactions"><button class="action ${liked?'liked':''}" onclick="toggleLike('${p.id}')">${liked?'♥':'♡'} Like</button><button class="action" onclick="focusComment('${p.id}')">▢ Comment</button><button class="action" onclick="sharePost('${p.id}')">↗ Share</button></div><div id="comments-${p.id}">${p.comments.slice(-2).map(c=>`<div style="font-size:13px;margin-top:8px"><b>${safe(db.users.find(x=>x.id===c.userId)?.name||'User')}:</b> ${safe(c.text)}</div>`).join('')}</div><div class="commentrow"><input id="comment-${p.id}" placeholder="Write a comment…"><button class="secondary" onclick="comment('${p.id}')">Send</button></div></article>`}).join('')}
+function toggleLike(id){let p=db.posts.find(x=>x.id===id);if(p.likes.includes(current))p.likes=p.likes.filter(x=>x!==current);else p.likes.push(current);save();render()}
+function focusComment(id){$('comment-'+id)?.focus()}
+function comment(id){let v=$('comment-'+id).value.trim();if(!v)return;db.posts.find(x=>x.id===id).comments.push({userId:current,text:v,created:Date.now()});save();render()}
+function sharePost(id){let p=db.posts.find(x=>x.id===id);let url=location.href.split('#')[0]+'#post-'+id;if(navigator.share)navigator.share({title:'REAL MESSAGE post',text:p.text,url}).catch(()=>{});else{navigator.clipboard?.writeText(url);alert('Post link copied (demo link).')}}
+function deletePost(id){if(confirm('Delete this post?')){db.posts=db.posts.filter(p=>p.id!==id);save();render()}}
+function openModal(title,body,submitText,fn){$('modalRoot').innerHTML=`<div class="modalback" onclick="if(event.target===this)closeModal()"><div class="modal"><h2>${title}</h2>${body}<div class="modalfoot"><button class="secondary" onclick="closeModal()">Cancel</button><button class="primary" id="modalSubmit">${submitText}</button></div></div></div>`;$('modalSubmit').onclick=fn}
+function closeModal(){$('modalRoot').innerHTML=''}
+function openPost(){openModal('Create a post',`<div class="formgrid"><textarea id="postText" placeholder="What would you like to share?"></textarea><label class="muted">Image URL (optional)</label><input id="postImage" placeholder="https://…"><div class="hint">For this prototype, use a publicly accessible image URL.</div></div>`,'Publish',()=>{let text=$('postText').value.trim(),image=$('postImage').value.trim();if(!text&&!image)return alert('Write something or add an image.');db.posts.push({id:uid(),userId:current,text,image,likes:[],comments:[],created:Date.now()});save();closeModal();navigate('home')})}
+function openStory(){openModal('Share a story',`<div class="formgrid"><input id="storyText" placeholder="Add a short story caption"><input id="storyImage" placeholder="Image URL (optional)"></div>`,'Share story',()=>{db.stories.push({id:uid(),userId:current,text:$('storyText').value,image:$('storyImage').value,created:Date.now()});save();closeModal();render()})}
+function viewStory(id){let s=db.stories.find(x=>x.id===id),u=db.users.find(x=>x.id===s.userId);openModal('Story · '+safe(u?.name||'User'),`<p>${safe(s.text||'')}</p>${s.image?`<img class="postimg" src="${safe(s.image)}">`:''}<p class="muted">Stories are visible in this demo for 24 hours.</p>`,'Close',closeModal)}
+function profilePage(){let u=me();return pageTitle('Your profile','Your identity in the REAL MESSAGE community')+`<div class="card"><div style="height:105px;border-radius:13px;background:linear-gradient(120deg,#f5c928,#fff0a1,#27220f)"></div><div style="display:flex;align-items:end;gap:13px;margin-top:-35px;padding:0 8px"><img src="${avatar(u)}" class="avatar" style="width:82px;height:82px;border:4px solid white"><div style="padding-bottom:6px"><h2 style="margin:0">${safe(u.name)}</h2><div class="muted">@${safe(u.username)}</div></div></div><p>${safe(u.bio||'')}</p><div class="statgrid"><div><b>${db.posts.filter(p=>p.userId===u.id).length}</b><span class="muted">Posts</span></div><div><b>${u.friends.length}</b><span class="muted">Friends</span></div><div><b>${db.groups.filter(g=>g.members.includes(u.id)).length}</b><span class="muted">Groups</span></div></div><button class="primary" style="width:100%;margin-top:15px" onclick="editProfile()">Edit profile</button></div><h3>Your posts</h3>${postList(db.posts.filter(p=>p.userId===u.id))}`}
+function editProfile(){let u=me();openModal('Edit profile',`<div class="formgrid"><label class="muted">Display name</label><input id="editName" value="${safe(u.name)}"><label class="muted">Bio</label><textarea id="editBio">${safe(u.bio||'')}</textarea><label class="muted">Profile image URL</label><input id="editAvatar" value="${safe(u.avatar||'')}" placeholder="https://…"></div>`,'Save changes',()=>{u.name=$('editName').value.trim()||u.name;u.bio=$('editBio').value.trim();u.avatar=$('editAvatar').value.trim();save();closeModal();render()})}
+function peoplePage(){return pageTitle('Find people','Search by exact username or name')+`<div class="card"><input id="peopleSearch" placeholder="Search username or name…" oninput="drawPeople()"><div id="peopleResults"></div></div>`}
+function drawPeople(){let q=$('peopleSearch').value.toLowerCase().replace(/^@/,'');let found=db.users.filter(u=>u.id!==current&&(u.username.includes(q)||u.name.toLowerCase().includes(q)));$('peopleResults').innerHTML=found.length?found.map(u=>`<div class="userrow"><img class="avatar" src="${avatar(u)}"><div class="grow"><b>${safe(u.name)}</b><div class="muted">@${safe(u.username)}</div></div><button class="secondary" onclick="toggleFriend('${u.id}')">${me().friends.includes(u.id)?'Friends':'Add friend'}</button></div>`).join(''):'<div class="empty">No matching people found.</div>'}
+function toggleFriend(id){let u=me();if(u.friends.includes(id))u.friends=u.friends.filter(x=>x!==id);else{u.friends.push(id);db.alerts.push({id:uid(),userId:current,text:'You connected with @'+db.users.find(x=>x.id===id).username,created:Date.now()})}save();drawPeople();renderNav()}
+function groupsPage(){return pageTitle('Groups & communities','Find your people and build a community')+`<div class="groupbanner"><div class="eyebrow" style="color:#ffe16a">YOUR COMMUNITY</div><h2>Better together.</h2><p style="margin:0;color:#eee2b0">Create a space for shared interests.</p><button class="primary" style="margin-top:12px" onclick="createGroup(false)">＋ Create group</button></div>`+db.groups.map(g=>`<div class="card"><div style="display:flex;justify-content:space-between;gap:10px"><div><b>◎ ${safe(g.name)}</b><div class="muted">${g.members.length} members · ${g.private?'Private':'Public'}</div><p style="margin-bottom:0">${safe(g.description)}</p></div><button class="secondary" onclick="joinGroup('${g.id}')">${g.members.includes(current)?'Joined':'Join'}</button></div></div>`).join('')+`<button class="secondary" onclick="createGroup(false)">＋ Create group</button>`}
+function channelsPage(){return pageTitle('Channels','Follow updates from creators and communities')+`<div class="card"><p>Channels are public broadcast spaces. Create one to share updates with followers.</p><button class="primary" onclick="createGroup(true)">＋ Create channel</button></div>`+db.groups.filter(g=>g.channel).map(g=>`<div class="card"><b>📣 ${safe(g.name)}</b><p class="muted">${g.members.length} subscribers</p><button class="secondary" onclick="joinGroup('${g.id}')">${g.members.includes(current)?'Following':'Follow channel'}</button></div>`).join('')}
+function createGroup(channel){openModal(channel?'Create a channel':'Create a group',`<div class="formgrid"><input id="groupName" placeholder="${channel?'Channel':'Group'} name"><textarea id="groupDesc" placeholder="What is this community about?"></textarea><label><input type="checkbox" id="groupPrivate" style="width:auto"> Private ${channel?'channel':'group'}</label></div>`,'Create',()=>{let name=$('groupName').value.trim();if(!name)return alert('Please enter a name.');db.groups.push({id:uid(),name,description:$('groupDesc').value,private:$('groupPrivate').checked,channel,members:[current],created:Date.now()});save();closeModal();render()})}
+function joinGroup(id){let g=db.groups.find(x=>x.id===id);if(g.members.includes(current))g.members=g.members.filter(x=>x!==current);else g.members.push(current);save();render()}
+function reelsPage(){let videos=db.posts.filter(p=>p.video);return pageTitle('Reels','Short videos from your community')+`<div class="card"><p>Share a video link as a Reel.</p><button class="primary" onclick="openReel()">＋ Add Reel</button></div>`+(videos.length?videos.map(p=>`<div class="card"><div class="posthead"><img class="avatar" src="${avatar(db.users.find(u=>u.id===p.userId))}"><b>@${safe(db.users.find(u=>u.id===p.userId)?.username||'user')}</b></div><p>${safe(p.text)}</p><a href="${safe(p.video)}" target="_blank" rel="noopener">▶ Open video</a></div>`).join(''):`<div class="card empty"><strong>No Reels yet</strong>Be the first to share a video.</div>`)}
+function openReel(){openModal('Add a Reel',`<div class="formgrid"><textarea id="reelText" placeholder="Caption"></textarea><input id="reelVideo" placeholder="Public video URL"></div>`,'Publish Reel',()=>{let video=$('reelVideo').value.trim();if(!video)return alert('Add a video URL.');db.posts.push({id:uid(),userId:current,text:$('reelText').value,video,likes:[],comments:[],created:Date.now()});save();closeModal();render()})}
+function marketPage(){return pageTitle('Marketplace','Discover items shared by the community')+`<div class="card"><button class="primary" onclick="addProduct()">＋ List an item</button></div>`+(db.products.length?db.products.map(p=>`<div class="card">${p.image?`<img class="postimg" src="${safe(p.image)}">`:''}<h3>${safe(p.title)}</h3><b>৳ ${safe(p.price)}</b><p class="muted">Listed by @${safe(db.users.find(u=>u.id===p.userId)?.username||'user')}</p><p>${safe(p.description)}</p><button class="secondary" onclick="alert('Demo marketplace: contact the seller through their profile.')">Contact seller</button></div>`).join(''):`<div class="card empty"><strong>Marketplace is waiting for its first listing</strong>Share something with your community.</div>`)}
+function addProduct(){openModal('List an item',`<div class="formgrid"><input id="prodTitle" placeholder="Item name"><input id="prodPrice" placeholder="Price (BDT)"><textarea id="prodDesc" placeholder="Description"></textarea><input id="prodImage" placeholder="Image URL (optional)"></div>`,'Publish listing',()=>{let title=$('prodTitle').value.trim();if(!title)return alert('Add an item name.');db.products.push({id:uid(),userId:current,title,price:$('prodPrice').value,description:$('prodDesc').value,image:$('prodImage').value,created:Date.now()});save();closeModal();render()})}
+function alertsPage(){let a=db.alerts.filter(x=>x.userId===current).sort((x,y)=>y.created-x.created);return pageTitle('Notifications','Updates from your REAL MESSAGE network')+(a.length?a.map(x=>`<div class="card">♢ ${safe(x.text)}<div class="muted">${new Date(x.created).toLocaleString()}</div></div>`).join(''):`<div class="card empty"><strong>You're all caught up</strong>New activity will appear here.</div>`)}
+// Initial demo content makes the empty feed easier to explore; all data stays local.
+if(!db.users.length){let demo={id:'demo-user',name:'REAL MESSAGE',username:'realmessage',password:'demo123',bio:'Connect • Share • Grow Together ✨',avatar:'',friends:[],created:Date.now()};db.users.push(demo);db.posts.push({id:uid(),userId:demo.id,text:'Welcome to REAL MESSAGE! ✨\\nA brighter place to connect, share and grow together. Create your account and say hello!',image:'',likes:[],comments:[],created:Date.now()});db.groups.push({id:uid(),name:'REAL MESSAGE Community',description:'News, ideas and friendly conversations.',private:false,channel:false,members:[demo.id],created:Date.now()});save()}
+</script>
+
+<script type="module">
+import { initializeApp } from "https://www.gstatic.com/firebasejs/10.14.1/firebase-app.js";
+import { getAnalytics, isSupported } from "https://www.gstatic.com/firebasejs/10.14.1/firebase-analytics.js";
+import {
+  getAuth, createUserWithEmailAndPassword, signInWithEmailAndPassword,
+  onAuthStateChanged, signOut
+} from "https://www.gstatic.com/firebasejs/10.14.1/firebase-auth.js";
+import {
+  getFirestore, doc, getDoc, setDoc, runTransaction, serverTimestamp
+} from "https://www.gstatic.com/firebasejs/10.14.1/firebase-firestore.js";
+
+const firebaseConfig = {
+  apiKey: "AIzaSyAYYzIm-saQ87grnhC0utkpnGAeSeFsf4I",
+  authDomain: "saiko-c58c8.firebaseapp.com",
+  projectId: "saiko-c58c8",
+  storageBucket: "saiko-c58c8.firebasestorage.app",
+  messagingSenderId: "813061223813",
+  appId: "1:813061223813:web:13761818a278963bef40ec",
+  measurementId: "G-CL9NMEWX5C"
+};
+
+const app = initializeApp(firebaseConfig);
+const auth = getAuth(app);
+const firestore = getFirestore(app);
+try {
+  if (await isSupported()) getAnalytics(app);
+} catch (error) {
+  console.info("Firebase Analytics is unavailable in this browser.", error);
+}
+
+// Firebase Email/Password requires an email-shaped identifier.
+// This app maps each username to a private internal sign-in address.
+// Users still enter only their username and password in the UI.
+const usernameEmail = username => `${username.toLowerCase()}@users.realmessage.app`;
+const usernamePattern = /^[a-z0-9._]{3,20}$/;
+
+const form = document.getElementById("authForm");
+const errorBox = document.getElementById("authError");
+const submitButton = document.getElementById("authSubmit");
+
+function showError(message) {
+  errorBox.textContent = message;
+}
+function firebaseMessage(error) {
+  const code = error?.code || "";
+  const messages = {
+    "auth/email-already-in-use": "This username is already registered.",
+    "auth/invalid-credential": "Username or password is incorrect.",
+    "auth/user-not-found": "Username or password is incorrect.",
+    "auth/wrong-password": "Username or password is incorrect.",
+    "auth/weak-password": "Please choose a stronger password (at least 6 characters).",
+    "auth/too-many-requests": "Too many attempts. Please try again later.",
+    "auth/network-request-failed": "Network error. Check your internet connection.",
+    "permission-denied": "Firestore permission denied. Please publish the Firebase security rules."
+  };
+  return messages[code] || error?.message || "Something went wrong. Please try again.";
+}
+
+form.addEventListener("submit", async event => {
+  event.preventDefault();
+  errorBox.textContent = "";
+  const username = document.getElementById("authUsername").value.trim().replace(/^@/, "").toLowerCase();
+  const password = document.getElementById("authPassword").value;
+  const name = document.getElementById("authName").value.trim();
+
+  if (!usernamePattern.test(username)) {
+    showError("Username must be 3–20 characters (letters, numbers, . or _).");
+    return;
+  }
+  if (password.length < 6) {
+    showError("Password must contain at least 6 characters.");
+    return;
+  }
+  if (window.authMode === "signup" && !name) {
+    showError("Please enter your name.");
+    return;
+  }
+
+  submitButton.disabled = true;
+  submitButton.textContent = "Please wait…";
+  try {
+    if (document.getElementById("signupTab").classList.contains("active")) {
+      // Reserve the username atomically, so two accounts cannot claim it.
+      const usernameRef = doc(firestore, "usernames", username);
+      const credential = await createUserWithEmailAndPassword(auth, usernameEmail(username), password);
+      const profile = {
+        uid: credential.user.uid,
+        name,
+        username,
+        bio: "New to REAL MESSAGE ✨",
+        avatar: "",
+        createdAt: serverTimestamp()
+      };
+      try {
+        await runTransaction(firestore, async transaction => {
+          const existing = await transaction.get(usernameRef);
+          if (existing.exists()) throw new Error("USERNAME_TAKEN");
+          transaction.set(usernameRef, { uid: credential.user.uid });
+          transaction.set(doc(firestore, "users", credential.user.uid), profile);
+        });
+      } catch (profileError) {
+        await credential.user.delete();
+        if (profileError.message === "USERNAME_TAKEN") throw new Error("USERNAME_TAKEN");
+        throw profileError;
+      }
+      window.startRealMessageSession(credential.user.uid, {
+        id: credential.user.uid, name, username, bio: profile.bio, avatar: "", friends: []
+      });
+    } else {
+      const credential = await signInWithEmailAndPassword(auth, usernameEmail(username), password);
+      const snap = await getDoc(doc(firestore, "users", credential.user.uid));
+      if (!snap.exists()) throw new Error("PROFILE_MISSING");
+      const data = snap.data();
+      window.startRealMessageSession(credential.user.uid, {
+        id: credential.user.uid,
+        name: data.name || username,
+        username: data.username || username,
+        bio: data.bio || "",
+        avatar: data.avatar || "",
+        friends: []
+      });
+    }
+  } catch (error) {
+    if (error.message === "USERNAME_TAKEN") showError("That username is already taken.");
+    else if (error.message === "PROFILE_MISSING") showError("Your account profile is missing. Contact the site administrator.");
+    else showError(firebaseMessage(error));
+    console.error("Firebase authentication error:", error);
+  } finally {
+    submitButton.disabled = false;
+    submitButton.textContent = document.getElementById("signupTab").classList.contains("active") ? "Create account" : "Log in";
+  }
+});
+
+// Keep the signed-in state in sync with Firebase authentication.
+onAuthStateChanged(auth, async user => {
+  if (!user) return;
+  const appVisible = !document.getElementById("app").classList.contains("hidden");
+  if (appVisible) return;
+  try {
+    const snap = await getDoc(doc(firestore, "users", user.uid));
+    if (!snap.exists()) return;
+    const data = snap.data();
+    window.startRealMessageSession(user.uid, {
+      id: user.uid, name: data.name || "REAL MESSAGE user",
+      username: data.username || "user", bio: data.bio || "",
+      avatar: data.avatar || "", friends: []
+    });
+  } catch (error) {
+    console.error("Could not load Firebase profile:", error);
+  }
+});
+
+window.realMessageFirebaseSignOut = async () => {
+  await signOut(auth);
+  location.reload();
+};
+</script>
+
+</body></html>
